@@ -1,0 +1,69 @@
+# ~/.config/alacritty/alacritty.toml
+
+[general]
+# Import Catppuccin Macchiato theme
+import = ["~/.config/alacritty/themes/catppuccin_mocha.toml"]
+# Apply changes on the fly without restart
+live_config_reload = true
+
+[keyboard]
+bindings = [
+  { key = "Return", mods = "Control|Shift", action = "SpawnNewInstance" }
+]
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style  = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style  = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style  = "Italic"
+
+[window]
+# Use the shell’s title in the window
+dynamic_title = true
+startup_mode  = "Windowed"
+decorations   = "full"
+
+[window.padding]
+x = 8
+y = 8
+
+[scrolling]
+# Large scrollback buffer + faster multiplier
+history    = 10000
+multiplier = 3
+
+
+[selection]
+# Copy selection to clipboard automatically
+save_to_clipboard      = true
+semantic_escape_chars  = "/\\\"'@%#-_:.?+=&|[]~`"
+
+[cursor]
+unfocused_hollow = true
+
+[cursor.style]
+shape    = "Beam"
+blinking = "Off"
+
+[env]
+TERM      = "alacritty"
+COLORTERM = "truecolor"
+
+[[hints.enabled]]
+binding         = { key = "0", mods = "Control|Shift" }
+command         = "open"          # macOS “open”
+hyperlinks      = true
+post_processing = true
+persist         = false
+mouse.enabled   = true
+regex           = '[^ ]*/[^/]+\.[[:alnum:]]+'
+
